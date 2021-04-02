@@ -1,0 +1,169 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+
+$breakpoints: (
+  'xs-phone': 320px,
+  'phone': 375px,
+  'tablet': 768px,
+  'desktop': 1024px,
+  'laptop': 1440px,
+  'widescreen': 1920px
+);
+
+// keywords
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+
+// Color system
+
+$white: #fff;
+$black: #2c2a29;
+$yellow: #fdda24;
+$light-cyan: #9bd3dd;
+$amber: #eaaa00;
+$light-green: #9abeaa;
+$blue: #005eb8;
+$red: #be3a34;
+$gray: #a7a7a7;
+$orange: #cd4c08;
+$dark-blue: #002855;
+$dark-gray: #333f48;
+$gradient-blue: linear-gradient(90deg, #0033a0 0%, #005eb8 100%);
+$gradient-orange: linear-gradient(90deg, #ed8b00 0%, #eaaa00 100%);
+$gradient-green: linear-gradient(90deg, #5b8e85 0%, #9bcac6 100%);
+$gradient-brown: linear-gradient(90deg, #705927 0%, #ad9761 100%);
+
+$pixel-gradient-light-blue: linear-gradient(to right, #bfb8af 0%, #bfb8af 10%, #bbbbb4 10%, #bbbbb4 20%, #b7beb9 20%, #b7beb9 30%, #b3c1be 30%, #b3c1be 40%, #afc4c3 40%, #afc4c3 50%, #abc7c9 50%, #abc7c9 60%, #a7cace 60%, #a7cace 70%, #a3cdd3 70%, #a3cdd3 80%, #9fd0d8 80%, #9fd0d8 90%, #9bd3dd 90%, #9bd3dd 100%);
+$pixel-gradient-dark-blue: linear-gradient(to right, #333f48 0%, #333f48 10%, #3f4f59 10%, #3f4f59 20%, #4a6069 20%, #4a6069 30%, #56707a 30%, #56707a 40%, #61818a 40%, #61818a 50%, #6d919b 50%, #6d919b 60%, #78a2ab 60%, #78a2ab 70%, #84b2bc 70%, #84b2bc 80%, #8fc3cc 80%, #8fc3cc 90%, #9bd3dd 90%, #9bd3dd 100%);
+$pixel-gradient-orange: linear-gradient(to right, #cd4c08 0%, #cd4c08 10%, #d15307 10%, #d15307 20%, #d45a06 20%, #d45a06 30%, #d86105 30%, #d86105 40%, #db6804 40%, #db6804 50%, #df6f04 50%, #df6f04 60%, #e27603 60%, #e27603 70%, #e67d02 70%, #e67d02 80%, #e98401 80%, #e98401 90%, #ed8b00 90%, #ed8b00 100%);
+$pixel-gradient-yellow: linear-gradient(to right, #fdda24 0%, #fdda24 10%, #fbd120 10%, #fbd120 20%, #f9c81c 20%, #f9c81c 30%, #f8c018 30%, #f8c018 40%, #f6b714 40%, #f6b714 50%, #f4ae10 50%, #f4ae10 60%, #f2a50c 60%, #f2a50c 70%, #f19d08 70%, #f19d08 80%, #ef9404 80%, #ef9404 90%, #ed8b00 90%, #ed8b00 100%);
+$pixel-gradient-blue: linear-gradient(to right, #005eb8 0%, #005eb8 10%, #1169b6 10%, #1169b6 20%, #2273b5 20%, #2273b5 30%, #337eb3 30%, #337eb3 40%, #4489b2 40%, #4489b2 50%, #5693b0 50%, #5693b0 60%, #679eaf 60%, #679eaf 70%, #78a9ad 70%, #78a9ad 80%, #89b3ac 80%, #89b3ac 90%, #9abeaa 90%, #9abeaa 100%);
+
+$primary: $orange;
+$secondary: $blue;
+
+
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold: 150;
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark: $black;
+$yiq-text-light: $white;
+
+// body
+//
+// settings for the `<body>` element.
+
+$body-bg: $white;
+$body-color: $black;
+$text-color: $gray;
+
+
+$link-color: $blue;
+$link-decoration: none;
+$link-hover-color: lighten($blue, 10%);
+$link-hover-decoration: none;
+
+// border radius
+$rounded-circle: 50%;
+
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+// $font-family-sans-serif: 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+// $font-family-sans-serif-secondary: 'Helvetica Neue condensed', Arial, 'Noto Sans', sans-serif;
+// $font-family-base: $font-family-sans-serif;
+$font-family-base: 'Montserrat', sans-serif;
+$base-font-path: 'vendors/fonts';
+
+$line-height-base: 1.75; 
+$rem-base: 30px;
+
+
+// container max width, used for .container element
+$gutter: 36px;
+// $container-max-width: 1090px + $gutter * 2;
+$container-max-width: convert-to-rem(3640px - $gutter * 2);
+
+
+// Variables for @include fluid-type mixin;
+// This mixin allow fonts to grow from $min viewport width to $max viewport width between sizes that are provided
+//
+$fluid-min: map-get($breakpoints, 'xs-phone');
+$fluid-max: map-get($breakpoints, 'laptop');
+
+$font-weight-thin: 100;
+$font-weight-ulight: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-heavy: 800;
+$font-weight-black: 900;
+
+
+$font-sizes: (
+  'xl': 18px,
+  'lg': 16px,
+  'base': 16px,
+  'md': 12px,
+  'sm': 10px,
+);
+
+$font-sizes-max: (
+  'xl': 24px,
+  'lg': 20px,
+  'base': 22px,
+  'md': 16px,
+  'sm': 14px,
+);
+
+$headings-sizes: (
+  'h1': 36px,
+  'h2': 28px,
+  'h3': 24px,
+  'h4': 16px,
+  'h5': 16px,
+  'h6': 12px,
+);
+
+$headings-sizes-max: (
+  'h1': 96px,
+  'h2': 72px,
+  'h3': 48px,
+  'h4': 36px,
+  'h5': 28px,
+  'h6': 24px,
+);
+
+$headings-margin-bottom: 0.35em;
+$headings-font-weight: inherit;
+$headings-line-height: 1.2;
+
+// Paragraphs
+
+// $paragraph-margin-bottom: 0.6em;
+
+// Base transition function
+$transition-duration-base: 0.3s;
+$transition-easing-base: cubic-bezier(0.3, 0.86, 0.36, 0.95);
+
+$header-height: rem-calc(294.69);

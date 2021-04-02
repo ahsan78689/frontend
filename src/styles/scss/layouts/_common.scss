@@ -1,0 +1,65 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the common layout of the site
+// -----------------------------------------------------------------------------
+html{
+  font-size: calc-vw(30);
+}
+
+body {
+  @include fluid-type(map-get($font-sizes, 'base'), map-get($font-sizes-max, 'base'));
+  margin: 0;
+  font-family: $font-family-base;
+  font-weight: $font-weight-normal;
+  font-style: normal;
+  line-height: 1.5;
+  background-color: $body-bg;
+  color: $text-color;
+}
+  
+  
+/*
+  Main content containers
+  1. Make the container full-width with a maximum width
+  2. Center it in the viewport
+  3. Leave some space on the edges, especially valuable on small screens
+*/
+
+.container {
+  width: $container-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  // padding-left: $gutter;
+  // padding-right: $gutter;
+  // width: 100%;
+
+  &--fluid {
+    width: 100%;
+  }
+}
+
+/*
+  Footer at bottom layout by default.
+  To disable - remove flex styles amd min-height
+*/
+
+.wrapper {
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+  
+/*
+  Element that will push footer to the end of page.
+  Didn't used as <main> tag, because mainly - structure of pages should be more
+  deeper for most of the designs, and <main> will be inside.
+*/
+
+.page-holder {
+  flex-grow: 1;
+  overflow: hidden;
+  width: 100%;
+}
+  

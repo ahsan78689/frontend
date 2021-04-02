@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/static/favicon/favicon-32x32.png" />
-    <title>Static WebPack Boilerplate</title>
+    <title>Tanner goods</title>
   </head>
 
-  <body>
-    <main>
-      <div class="container container--flex">
-        <div>
-          <div class="header card">
-            <div class="header__img-box">
-              <a href="https://github.com/hasnaindev" target="_blank">
-                <img
-                  src="/static/images/logo.png"
-                  alt="Static WebPack Boilerplate"
-                  title="Static WebPack Boilerplate"
-                  class="header__img"
-                />
-              </a>
-            </div>
-          </div>
-          <div class="content card">
-            <a
-              href="https://github.com/hasnaindev"
-              target="_blank"
-              class="link--flat"
-            >
-              <h1 class="content__title">Static WebPack Boilerplate</h1>
-              <p class="content__subtitle">
-                The best boilerplate with HMR and optimizations right out of the box!
-              </p>
+  <body class="main">
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <nav class="main_nav" role="navigation">
+            <a href="#" >
+              <img src="static/images/logo_wth_bg.png" alt="Tanner Goods" class="header--logo">
             </a>
+            <ul class="main_nav--list">
+              <li class="main_nav--item main_nav--dark active">
+                <a href="#">Navy salt</a>
+              </li>
+              <li class="main_nav--item main_nav--dark">
+                <a href="#">Voyager</a>
+              </li>
+              <li class="main_nav--item main_nav--light">
+                <a href="#">Drifter</a>
+              </li>
+              <li class="main_nav--item main_nav--light">
+                <a href="#">Collection</a>
+              </li>
+              <li class="main_nav--item main_nav--light">
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="nav-toggler">
+            <span></span>
           </div>
         </div>
-      </div>
-    </main>
+      </header>
+      <main class="main">
+        <section class="products_slider">
+          <span style="background-image: url('static/images/product_slider_image_01.png')" class="section_bg section_bg--right"></span>
+          <div class="container">
+            <div class="products_slider--content">
+              <div class="slide_sub_title">Designed by utility</div>
+              <h2 class="slide_title">Navy Salt & Pepper</h2>
+              <a href="#" class="slide_cta">Gear UP</a>
+            </div>
+          </div>
+        </section>
+      </main>
+  </div>
   </body>
 </html>

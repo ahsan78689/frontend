@@ -1,0 +1,123 @@
+// $main_nav: ".main_nav";
+.main_nav {
+    $main_nav: &;
+
+    display: flex;
+    align-items: center;
+
+    .nav-toggler {
+        display: none;
+
+        @include media('<=tablet'){
+            display: inline-block;
+        }
+
+        span {
+            position: relative;
+            background: black;
+            display: inline-block;
+            width: rem-calc(105);
+            height: 3px;
+
+            &:before, &:after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background: #000;
+            }
+
+            &:before{
+                top: -8px;
+            }
+
+            &:after{
+                bottom: -8px;
+            }
+        }
+    }
+
+    &--list{
+        display: none;
+
+        @include media('>tablet'){
+            // width: calc(100% - 14.2rem);
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #{$main_nav}--item {
+            margin: rem-calc(0 100px);
+            
+            &:first-child{
+                margin-left: 0;
+            }
+
+            &:last-child{
+                margin-right: 0;
+            }
+
+            &#{$main_nav}--dark, &#{$main_nav}--light{
+
+                &.active, &:hover{
+                    position: relative;
+                    &:before, &:after{
+                        content: '';
+                        position: absolute;
+                    }
+    
+                    &:before{
+                        top: calc(50% - 0.133rem);
+                        left: rem-calc(-110);
+                        width: rem-calc(80);
+                        height: rem-calc(4);
+                    }
+    
+                    &:after{
+                        top: calc(50% - 0.15rem);
+                        top: 44%;
+                        right: rem-calc(-16);
+                        width: rem-calc(9);
+                        height: rem-calc(9);
+                        border-radius: 100%;
+                    }
+                }
+            }
+
+            &#{$main_nav}--dark{
+                &.active, &:hover{
+                    &:before, &:after{
+                        background: #b8a47e;
+                    }
+                }
+
+                a{
+                    color: #000;
+                }
+            }
+
+            &#{$main_nav}--light{
+                &.active, &:hover{
+                    &:before, &:after{
+                        background: #fff;
+                    }
+                }
+
+                a{
+                    color: #fff;
+                }
+            }
+
+            a{
+                font-family: "Muller ExtraBold";
+                text-transform: uppercase;
+
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

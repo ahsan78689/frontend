@@ -1,71 +1,28 @@
-@font-face {
-  font-family: 'PT Serif';
+// @import "~bootstrap";
 
-  src: url('./vendors/fonts/PTSerif-Bold.ttf');
-  src: url('./vendors/fonts/PTSerif-Regular.ttf');
-}
+@import "/node_modules/bootstrap/dist/css/bootstrap-reboot.css";
 
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+// Required
+@import "scss/abstracts/functions";
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
 
-body {
-  font-family: 'PT Serif';
-}
+//Vendors
+@import '~include-media/dist/include-media';
 
-.container {
-  margin: 0 auto;
-  max-width: 720px;
+//base styles
+@import 'scss/base/base';
+@import 'scss/base/font';
 
-  &--flex {
-    align-items: center;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    min-height: 100vh;
-  }
-}
+//Layouts related styles
+@import 'scss/layouts/common';
+@import 'scss/layouts/header';
 
-.header {
-  margin-bottom: 32px;
-  text-align: center;
+//Components styles
+@import 'scss/components/nav';
 
-  &__img {
-    animation: Hover 1s ease-in-out 0s infinite;
-    height: 240px;
-  }
-}
-
-.content {
-  text-align: center;
-
-  &__title {
-    font-size: 26px;
-    margin-bottom: 16px;
-  }
-
-  &__subtitle {
-    font-size: 18px;
-  }
-}
-
-.card {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 3px 7px 0 rgba(0, 0, 0, 0.1);
-  padding: 24px;
-}
-
-.link {
-  &--flat {
-    color: #000;
-    text-decoration: none;
-  }
-}
+//Pages styles
+@import 'scss/pages/home';
 
 @keyframes Hover {
   0% {

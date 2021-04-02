@@ -1,0 +1,30 @@
+.products_slider {
+    position: relative;
+    height: rem-calc(1400);
+    padding-top: $header-height;
+    display: flex;
+    align-items: center;
+
+    .section_bg{
+        background-size: rem-calc(2480);
+    }
+
+    &--content{
+        padding-left: rem-calc(620);
+    }
+}
+
+.section_bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+
+    &--right{
+        background-position: center right;
+    }
+}
+

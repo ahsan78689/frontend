@@ -13,6 +13,10 @@ const HTMLPlugins = () =>
         template: dir,
         publicPath: '/',
         filename: path.basename(dir),
+        meta: {
+          charset: 'UTF-8',
+          viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+        },
       }),
   );
 
@@ -68,6 +72,10 @@ module.exports = (_, { mode }) => {
                   loader: MiniCssExtractPlugin.loader,
                 },
             'css-loader',
+            'postcss-loader',
+            {
+              loader: 'group-css-media-queries-loader',
+            },
             'sass-loader',
           ],
         },
@@ -84,7 +92,7 @@ module.exports = (_, { mode }) => {
           test: /\.(eot|woff2?|ttf)$/i,
           options: {
             outputPath: 'fonts/',
-            publicPath: '../fonts/',
+            publicPath: 'fonts/',
             name: '[name].[ext]',
           },
         },

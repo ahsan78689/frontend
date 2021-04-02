@@ -1,0 +1,14 @@
+.header {
+    margin-bottom: 32px;
+    height: $header-height;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+
+    &--logo {
+      width: rem-calc(426);
+      margin-right: rem-calc(250);
+    }
+  }
